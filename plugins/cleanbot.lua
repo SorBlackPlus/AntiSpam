@@ -14,7 +14,7 @@ return {
 
 patterns ={ 
 
-'^[!/#](cleanbot)$'
+'^[!/#](cleanbot)$',
 '^(پاکسازی بات)$'
  
  },
