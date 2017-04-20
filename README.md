@@ -1,7 +1,7 @@
-# [BDReborn](https://telegram.me/BDReborn)
+# [AntiSpam-Pirme V.6](https://t.me/PrimeTeam)
 
 **An advanced and powerful administration bot based on NEW TG-CLI
-
+and debuged By # [@SorBlack](Https://t.me/SorBlack)
 
 * * *
 
@@ -20,58 +20,60 @@
 ```sh
 # Let's install the bot.
 cd $HOME
-git clone https://github.com/BeyondTeam/BDReborn.git
-cd BDReborn
-chmod +x beyond.sh
-./beyond.sh install
-./beyond.sh 
+git clone https://github.com/SorBlackPlus/AntiSpam.git
+cd AntiSpam
+chmod +x Prime.sh
+./Prime.sh install
+./Prime.sh 
 # Enter a phone number & confirmation code.
-
+-----------------------------
 # For Auto Launch:
-chmod 777 autobd.sh
-screen ./autobd.sh
+chmod 777 autopr.sh
+screen ./autopr.sh
 ```
 ### One command
 To install everything in one command, use:
 ```sh
-cd $HOME && git clone https://github.com/BeyondTeam/BDReborn.git && cd BDReborn && chmod +x beyond.sh && ./beyond.sh install && ./beyond.sh
+cd $HOME && git clone https://github.com/SorBlackPlus/AntiSpam.git && cd AntiSpam && chmod +x Prime.sh && ./Prime.sh install && ./Prime.sh
 
 OR
 
-cd $HOME && git clone https://github.com/BeyondTeam/BDReborn.git && cd BDReborn && chmod +x beyond.sh && ./beyond.sh install && chmod 777 autobd.sh && screen ./autobd.sh
+cd $HOME && git clone https://github.com/SorBlackPlus/AntiSpam.git && cd AntiSpam && chmod +x Prime.sh && ./Prime.sh install && chmod 777 autopr.sh && screen ./autopr.sh
 ```
 
 * * *
 
+### Sudo
+
+Open ./bot/bot.lua and add your ID to the "sudo_users" section in the following format:
+```
+    sudo_users = {
+    93365812,
+    0,
+    YourID
+  }
+```
+add your ID at line 72 in bot.lua and add your ID at line 2 in tools.lua, Then restart the bot.
+
 # Support and Development
 
-More information [Beyond Global Chat](https://t.me/joinchat/AAAAAEGaKOxC8K6cJ3bCcw)
+More information [Prime Global Chat](https://telegram.me/joinchat/CEYCikF1o8P6n7Vpbu0b5A)
 
 # Special thanks to
-[@nero_dev](https://telegram.me/nero_dev)
+[@iam_nagin](https://telegram.me/iam_nagin)
 
-[@MrHalix](https://github.com/MrHalix)
+[@SikiozBoy](https://telegram.me/SikiozBoy)
 
-[@Vysheng](https://github.com/vysheng)
+[@SorBalck](https://github.com/SorBalck)
+
+[@Bot_Api](https://github.com/Bot_Api)
 
 * * *
 
 # Developers!
 
-[SoLiD](https://github.com/solid021) ([Telegram](https://telegram.me/SoLiD))
-
-[To0fan](https://github.com/To0fan) ([Telegram](https://telegram.me/ToOfan))
-
-[MAKAN](https://github.com/makanj) ([Telegram](https://telegram.me/MAKAN))
-
-[Ali](https://github.com/ali-ghoghnoos) ([Telegram](https://telegram.me/Exacute))
-
-[Rixel](https://github.com/Rixel) ([Telegram](https://telegram.me/Rixel))
-
-[mamad-datak](https://github.com/datak137) ([Telegram](https://telegram.me/K_a_I_i_I_i_n_u_x))
-
-[Civey](https://github.com/Oysof) ([Telegram](https://telegram.me/Civey))
+[@SorBlack](https://github.com/SorBlackPlus) ([Telegram](https://telegram.me/SorBlack))
 
 ### Our Telegram channel:
 
-[@BeyondTeam](https://telegram.me/BeyondTeam)
+[@PrimeTeam](https://telegram.me/PrimeTeam)
