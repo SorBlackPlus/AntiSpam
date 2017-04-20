@@ -1,6 +1,6 @@
 
---Begin Fun.lua By @BeyondTeam
---Special Thx To @To0fan
+--Begin Fun.lua By @PrimeTeam
+--Special Thx To @Sorblack
 --------------------------------
 
 local function run_bash(str)
@@ -66,7 +66,7 @@ local function get_weather(location)
 	local weather = json:decode(b)
 	local city = weather.name
 	local country = weather.sys.country
-	local temp = 'دمای شهر '..city..' هم اکنون '..weather.main.temp..' درجه سانتی گراد می باشد\n____________________\n @BeyondTeam :)'
+	local temp = 'دمای شهر '..city..' هم اکنون '..weather.main.temp..' درجه سانتی گراد می باشد\n____________________\n @PrimeTeam :)'
 	local conditions = 'شرایط فعلی آب و هوا : '
 	if weather.weather[1].main == 'Clear' then
 		conditions = conditions .. 'آفتابی☀'
@@ -88,7 +88,7 @@ local function calc(exp)
 	b,c = http.request(url)
 	text = nil
 	if c == 200 then
-    text = 'Result = '..b..'\n____________________\n @BeyondTeam :)'
+    text = 'Result = '..b..'\n____________________\n @PrimeTeam :)'
 	elseif c == 400 then
 		text = b
 	else
@@ -151,7 +151,7 @@ end
 		text = text..'\nغروب آفتاب: '..data.Sunset
 		text = text..'\nاذان مغرب: '..data.Maghrib
 		text = text..'\nعشاء : '..data.Isha
-		text = text..'\n@BeyondTeam\n'
+		text = text..'\n@PrimeTeam\n'
 		return tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'html')
 	end
 --------------------------------
@@ -170,7 +170,7 @@ end
 					local apath = tostring(tcpath)..'/data/sticker'
 					if file_exi(tostring(name), tostring(apath), tostring(pasvand)) then
 						os.rename(file, pfile)
-						tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, pfile, "@BeyondTeam", dl_cb, nil)
+						tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, pfile, "@PrimeTeam", dl_cb, nil)
 					else
 						tdcli.sendMessage(msg.to.id, msg.id_, 1, '_This sticker does not exist. Send sticker again._', 1, 'md')
 					end
@@ -192,7 +192,7 @@ end
 					local pfile = 'data/photos/'..file..'.webp'
 					if file_exi(file..'_(1).jpg', tcpath..'/data/photo', 'jpg') then
 						os.rename(pathf, pfile)
-						tdcli.sendDocument(msg.chat_id_, 0, 0, 1, nil, pfile, '@BeyondTeam', dl_cb, nil)
+						tdcli.sendDocument(msg.chat_id_, 0, 0, 1, nil, pfile, '@PrimeTeam', dl_cb, nil)
 					else
 						tdcli.sendMessage(msg.to.id, msg.id_, 1, '_This photo does not exist. Send photo again._', 1, 'md')
 					end
@@ -237,7 +237,7 @@ if matches[1]:lower() == 'voice' or matches[1]:lower() == "تبدیل به صد�
       else
   local url = "http://tts.baidu.com/text2audio?lan=en&ie=UTF-8&text="..textc
   local file = download_to_file(url,'BD-UniQue.mp3')
- 				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '@BeyondTeam', dl_cb, nil)
+ 				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '@PrimeTeam', dl_cb, nil)
    end
 end
 
@@ -245,7 +245,7 @@ end
 	if matches[1]:lower() == "tr" or matches[1]:lower() == "ترجمه" then 
 		url = https.request('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160119T111342Z.fd6bf13b3590838f.6ce9d8cca4672f0ed24f649c1b502789c9f4687a&format=plain&lang='..URL.escape(matches[2])..'&text='..URL.escape(matches[3]))
 		data = json:decode(url)
-		return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n @BeyondTeam :)'
+		return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n @PrimeTeam :)'
 	end
 --------------------------------
 	if matches[1]:lower() == 'short' or matches[1]:lower() == "لینک کوتاه" then
@@ -262,7 +262,7 @@ end
 		local opizo = http.request('http://api.gpmod.ir/shorten/?url='..URL.escape(shortlink)..'&username=mersad565@gmail.com')
 		local u2s = http.request('http://u2s.ir/?api=1&return_text=1&url='..URL.escape(shortlink))
 		local llink = http.request('http://llink.ir/yourls-api.php?signature=a13360d6d8&action=shorturl&url='..URL.escape(shortlink)..'&format=simple')
-		local text = ' 🌐لینک اصلی :\n'..check_markdown(data.data.long_url)..'\n\nلینکهای کوتاه شده با 6 سایت کوتاه ساز لینک : \n》کوتاه شده با bitly :\n___________________________\n'..check_markdown(data.data.url)..'\n___________________________\n》کوتاه شده با yeo :\n'..check_markdown(yeo)..'\n___________________________\n》کوتاه شده با اوپیزو :\n'..check_markdown(opizo)..'\n___________________________\n》کوتاه شده با u2s :\n'..check_markdown(u2s)..'\n___________________________\n》کوتاه شده با llink : \n'..check_markdown(llink)..'\n___________________________\n》لینک کوتاه شده با yon : \nyon.ir/'..check_markdown(jdat.output)..'\n____________________\n @BeyondTeam :)'
+		local text = ' 🌐لینک اصلی :\n'..check_markdown(data.data.long_url)..'\n\nلینکهای کوتاه شده با 6 سایت کوتاه ساز لینک : \n》کوتاه شده با bitly :\n___________________________\n'..check_markdown(data.data.url)..'\n___________________________\n》کوتاه شده با yeo :\n'..check_markdown(yeo)..'\n___________________________\n》کوتاه شده با اوپیزو :\n'..check_markdown(opizo)..'\n___________________________\n》کوتاه شده با u2s :\n'..check_markdown(u2s)..'\n___________________________\n》کوتاه شده با llink : \n'..check_markdown(llink)..'\n___________________________\n》لینک کوتاه شده با yon : \nyon.ir/'..check_markdown(jdat.output)..'\n____________________\n @PrimeTeam :)'
 		return tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'html')
 	end
 --------------------------------
@@ -307,115 +307,109 @@ end
 		local url = "https://assets.imgix.net/examples/clouds.jpg?blur=150&w="..w.."&h="..h.."&fit=crop&txt="..eq.."&txtsize="..txtsize.."&txtclr="..txtclr.."&txtalign=middle,center&txtfont=Futura%20Condensed%20Medium&mono=ff6598cc"
 		local receiver = msg.to.id
 		local  file = download_to_file(url,'text.jpg')
-		tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, file, "@BeyondTeam", dl_cb, nil)
+		tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, file, "@PrimeTeam", dl_cb, nil)
 	end
-
-
 --------------------------------
-if matches[1]:lower() == "helpfun" or matches[1] == "راهنمای سرگرمی" then
-local hash = "gp_lang:"..msg.to.id
-local lang = redis:get(hash)
-if not lang then
-helpfun = [[
-_Beyond Reborn Fun Help Commands:_
-
-*!time*
-_Get time in a sticker_
-
-*!short* `[link]`
-_Make short url_
-
-*!voice* `[text]`
-_Convert text to voice_
-
-*!tr* `[lang] [word]`
-_Translates FA to EN and EN to FA_
-_Example:_
-*!tr fa hi*
-
-*!sticker* `[word]`
-_Convert text to sticker_
-
-*!photo* `[word]`
-_Convert text to photo_
-
-*!azan* `[city]`
-_Get Azan time for your city_
-
-*!calc* `[number]`
-Calculator
-
-*!praytime* `[city]`
-_Get Patent (Pray Time)_
-
-*!tosticker* `[reply]`
-_Convert photo to sticker_
-
-*!tophoto* `[reply]`
-_Convert text to photo_
-
-*!weather* `[city]`
-_Get weather_
-
-_You can use_ *[!/#]* _at the beginning of commands._
-
-*Good luck ;)*]]
-tdcli.sendMessage(msg.chat_id_, 0, 1, helpfun, 1, 'md')
+if matches[1]:lower() == "me" or matches[1] == "من"  then
+if msg.from.username then
+username = '@'..check_markdown(msg.from.username)
 else
-
-helpfun = [[
-_راهنمای سرگرمی ربات بیوند:_
-
-*ساعت*
-_دریافت ساعت به صورت استیکر_
-
-*لینک کوتاه* `[لینک]`
-_کوتاه کننده لینک_
-
-*تبدیل به صدا* `[متن]`
-_تبدیل متن به صدا_
-
-*ترجمه* `[زبان]` `[کلمه]`
-_ترجمه متن فارسی به انگلیسی وبرعکس_
-_مثال:_
-_ترجمه زبان سلام_
-
-*استیکر* `[کلمه]`
-_تبدیل متن به استیکر_
-
-*عکس* `[کلمه]`
-_تبدیل متن به عکس_
-
-*اذان* `[شهر]`
-_دریافت اذان_
-
-*حساب کن* `[عدد]`
-_ماشین حساب_
-
-*ساعات شرعی* `[شهر]`
-_اعلام ساعات شرعی_
-
-*تبدیل به استیکر* `[ریپلی]`
-_تبدیل عکس به استیکر_
-
-*تبدیل به عکس* `[ریپلی]`
-_تبدیل استیکر‌به عکس_
-
-*اب هوا* `[شهر]`
-_دریافت اب وهوا_
-
-*شما میتوانید از [!/#] در اول دستورات برای اجرای آنها بهره بگیرید*
-
-موفق باشید ;)]]
-tdcli.sendMessage(msg.chat_id_, 0, 1, helpfun, 1, 'md')
+username = "No Username"
+end
+  return "_Name Gp :_ *"..msg.to.title.."*\n_ID:_ *"..msg.from.id.."*\n_Username:_ "..username
+end
+--------------------------------
+if matches[1]:lower() == 'clean' or matches[1] == 'پاک کردن' and matches[2]:lower() == 'blacklist' or matches[2] == 'بلک لیست' then
+    if not is_mod(msg) then
+      return -- «Mods allowed»
+    end
+	
+    local function cleanbl(ext, res)
+      if tonumber(res.total_count_) == 0 then -- «Blocklist is empty or maybe Bot is not group's admin»
+        return tdcli.sendMessage(ext.chat_id, ext.msg_id, 0, '⚠️ _لیست مسدودی های گروه خالی است_ !', 1, 'md')
+      end
+      local x = 0
+      for x,y in pairs(res.members_) do
+        x = x + 1
+        tdcli.changeChatMemberStatus(ext.chat_id, y.user_id_, 'Left', dl_cb, nil) -- «Changing user status to left, removes user from blocklist»
+      end
+      return tdcli.sendMessage(ext.chat_id, ext.msg_id, 0, '✅ _ کاربر از لیست مسدودی های گروه آزاد شدند_ !', 1, 'md')
+    end
+	
+    return tdcli.getChannelMembers(msg.to.id, 0, 'Kicked', 200, cleanbl, {chat_id = msg.to.id, msg_id = msg.id}) -- «Gets channel blocklist»
+  end
+--------------------------------
+if matches[1] == 'addkick' or matches[1] == 'افزودن ریمو' and is_owner(msg) then
+        if gp_type(msg.to.id) == "channel" then
+            tdcli.getChannelMembers(msg.to.id, 0, "Kicked", 200, function (i, naji)
+                for k,v in pairs(naji.members_) do
+                    tdcli.addChatMember(i.chat_id, v.user_id_, 50, dl_cb, nil)
+                end
+            end, {chat_id=msg.to.id})
+            return "*>Banned User has been added Again Sussecfully✅*"
+        end
+        return "*Just in the super group may be :(*"
+    end
+--------------------------------
+local data = {
+"_چخه_",
+"_هن_",
+"_انلاینم_",
+"*online*",
+"*pong*",
+"*Im online ;D*"
+}
+if matches[1]:lower() == "ping" or matches[1] == "ربات" then
+return data[math.random(#data)]
+end
+--------------------------------
+if matches [1] == 'setnerkh' or matches[1] == 'تنظیم نرخ' then 
+if not is_admin(msg) then 
+return '_You are Not_ *Moderator*' 
+end 
+local nerkh = matches[2] 
+redis:set('bot:nerkh',nerkh) 
+return 'نرخ باموفقیت ثبت گردید😐❤️' 
+end 
+if matches[1] == 'nerkh' or matches[1] == 'نرخ' then 
+if not is_mod(msg) then 
+return 
+end 
+    local hash = ('bot:nerkh') 
+    local nerkh = redis:get(hash) 
+    if not nerkh then 
+    return 'نرخ ثبت نشده📛' 
+    else 
+     tdcli.sendMessage(msg.chat_id_, 0, 1, nerkh, 1, 'html') 
+    end 
+    end 
+if matches[1]== "delnerkh" or matches[1] == 'پاک کردن نرخ' then 
+if not is_admin(msg) then 
+return '_You are Not_ *Moderator*' 
+end 
+    local hash = ('bot:nerkh') 
+    redis:del(hash) 
+return 'نرخ پاک شد🗑' 
+end 
+--------------------------------
+if matches[1]:lower() == 'echo' or matches[1] == 'اکو' then
+local pext = matches[2]
+tdcli.sendMessage(msg.to.id, 0,1, pext,1,'html')
+end
+--------------------------------
+if matches[1]:lower() == 'edit' or matches[1] == 'ادیت' and msg.reply_to_message_id_ ~= 0 and is_sudo(msg) then
+local Text = matches[2]
+tdcli.editMessageText(msg.to.id, msg.reply_to_message_id_, nil, Text, 1, 'md')
 end
 
+if matches[1]:lower() == 'edit' or matches[1] == 'ادیت' and msg.reply_to_message_id_ ~= 0 and is_sudo(msg) then
+local tExt = matches[2]
+tdcli.editMessageCaption(msg.to.id, msg.reply_to_message_id_, nil, tExt)
 end
 end
 --------------------------------
 return {               
 	patterns = {
-command ..  "([Hh]elpfun)$",
 command ..  "([Ww]eather) (.*)$",
 command ..	"([Cc]alc) (.*)$",
 command ..	"([Tt]ime)$",
@@ -430,7 +424,16 @@ command ..	"([Tt]r) ([^%s]+) (.*)$",
 command ..	"([Ss]hort) (.*)$",
 command ..	"([Pp]hoto) (.+)$",
 command ..	"([Ss]ticker) (.+)$",
-	"^([Hh]elpfun)$",
+command ..	"([Mm]e)$",
+command ..	"([Cc]lean) ([Bb]lacklist)$",
+command ..	"([Aa]ddkick)$",
+command ..  "([Pp]ing)$",
+command ..  "([Ss]etnerkh) (.*)$",
+command ..  "([Dd]elnerkh)$",
+command ..  "([Nn]erkh)$",
+command ..  "([Ee]dit) (.*)",
+command ..  "([Ee]dit) (.*)",
+command ..  "([Ee]cho) (.*)",
 	"^([Ww]eather) (.*)$",
 	"^([Cc]alc) (.*)$",
 	"^([Tt]ime)$",
@@ -444,10 +447,19 @@ command ..	"([Ss]ticker) (.+)$",
 	"^([Tt]r) ([^%s]+) (.*)$",
 	"^([Ss]hort) (.*)$",
 	"^([Pp]hoto) (.+)$",
-	"^([Ss]ticker) (.+)$"
+	"^([Ss]ticker) (.+)$",
+	"^([Mm]e)$",
+	"^([Cc]lean) ([Bb]lacklist)$",
+    "^([Aa]ddkick)$",
+    "^([Pp]ing)$",
+    "^([Dd]elnerkh)$",
+    "^([Ss]etnerkh) (.*)$",
+	"^([Nn]erkh)$",
+	"^([Ee]dit) (.*)$",
+	"^([Ee]dit) (.*)$",
+	"^([Ee]cho) (.*)$"	
 		}, 
 		patterns_fa = {
-  "^(راهنمای سرگرمی)$",
   "^(اب و هوا) (.*)$",
 	"^(حساب کن) (.*)$",
 	"^(ساعت)$",
@@ -461,9 +473,19 @@ command ..	"([Ss]ticker) (.+)$",
 	"^(ترجمه) ([^%s]+) (.*)$",
 	"^(لینک کوتاه) (.*)$",
 	"^(تبدیل به عکس) (.+)$",
-	"^(تبدیل به استیکر) (.+)$"
+	"^(تبدیل به استیکر) (.+)$",
+    "^(من)$",
+	"^(پاک کردن) (بلک لیست)$",
+	"^(ربات)$",
+    "^(افزودن ریمو)$",
+	"^(نرخ)$",
+    "^(تنظیم نرخ) (.*)$",
+    "^(پاک کردن نرخ)$",
+    "^(ادیت) (.*)$",
+    "^(ادیت) (.*)$",
+    "^(اکو) (.*)$"	
 },
 	run = run,
 	}
 
---#by @BeyondTeam :)
+--#by @PrimeTeam :)
