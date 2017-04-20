@@ -12,7 +12,7 @@ end
 return {
   patterns = {
     "^[/#+×!$]([Pp][Ii][Nn][Gg])",
-    "^(پینگ)"
+    "^(پینگ)",
   },
   run = run
 }
