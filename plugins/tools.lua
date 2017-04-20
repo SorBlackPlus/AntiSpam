@@ -1,5 +1,5 @@
---Begin Tools.lua :)
-local SUDO = 157059515 -- put Your ID here! <===
+--Begin Tools.lua :):|
+local SUDO = 93365812 -- put Your ID here! <===
 function exi_files(cpath)
     local files = {}
     local pth = cpath
@@ -923,7 +923,7 @@ end
 			else
 				local day = math.floor(expi / 86400) + 1
 				if lang then
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, day..' روز تا اتما شارژ گروه باقی مانده است.', 1, 'md')
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, day..' روز تا اتمام شارژ گروه باقی مانده است.', 1, 'md')
 				else
 					tdcli.sendMessage(msg.to.id, msg.id_, 1, '`'..day..'` *Day(s) remaining until Expire.*', 1, 'md')
 				end
@@ -942,7 +942,7 @@ end
 			else
 				local day = math.floor(expi / 86400 ) + 1
 				if lang then
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, day..' روز تا اتما شارژ گروه باقی مانده است.', 1, 'md')
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, day..' روز تا اتمام شارژ گروه باقی مانده است.', 1, 'md')
 				else
 					tdcli.sendMessage(msg.to.id, msg.id_, 1, '`'..day..'` *Day(s) remaining until Expire.*', 1, 'md')
 				end
@@ -1004,7 +1004,7 @@ end
 
 if (matches[1] == 'createsuper' or matches[1] == 'ساخت سوپر گروه') and is_admin(msg) then
 local text = matches[2]
-tdcli.createNewChannelChat(text, 1, '@BeyondTeam', (function(b, d) tdcli.addChatMember(d.id_, msg.from.id, 0, dl_cb, nil) end), nil)
+tdcli.createNewChannelChat(text, 1, '@PrimeTeam', (function(b, d) tdcli.addChatMember(d.id_, msg.from.id, 0, dl_cb, nil) end), nil)
    if not lang then 
 return '_SuperGroup Has Been Created and_ [`'..msg.from.id..'`] _Joined To This SuperGroup._'
   else
@@ -1099,11 +1099,11 @@ end
   if is_sudo(msg) then
 	if (matches[1]:lower() == "sendfile" or matches[1] == 'ارسال فایل') and matches[2] and matches[3] then
 		local send_file = "./"..matches[2].."/"..matches[3]
-		tdcli.sendDocument(msg.chat_id_, msg.id_,0, 1, nil, send_file, '@BeyondTeam', dl_cb, nil)
+		tdcli.sendDocument(msg.chat_id_, msg.id_,0, 1, nil, send_file, '@PrimeTeam', dl_cb, nil)
 	end
 	if matches[1]:lower() == "sendplug" or matches[1] == 'ارسال پلاگین' and matches[2] then
 	    local plug = "./plugins/"..matches[2]..".lua"
-		tdcli.sendDocument(msg.chat_id_, msg.id_,0, 1, nil, plug, '@BeyondTeam', dl_cb, nil)
+		tdcli.sendDocument(msg.chat_id_, msg.id_,0, 1, nil, plug, '@PrimeTeam', dl_cb, nil)
     end
   end
 
@@ -1163,7 +1163,7 @@ return chat_list(msg)
 	   tdcli.sendMessage(matches[2], 0, 1, "Group has been removed by admin command", 1, 'html')
     return '_Group_ *'..matches[2]..'* _removed_'
 		end
-if matches[1] == 'beyond' or matches[1] == 'بیوند' then
+if matches[1] == 'Prime' or matches[1] == 'پرایم' then
 return tdcli.sendMessage(msg.to.id, msg.id, 1, _config.info_text, 1, 'html')
     end
 if (matches[1] == 'adminlist' or matches[1] == 'لیست ادمین') and is_admin(msg) then
@@ -1190,239 +1190,11 @@ local hash = 'auto_leave_bot'
    return 'Auto leave is disable'
          end
       end
-   end
-
-
-if (matches[1] == "helptools" or  matches[1] == "راهنما ابزار") and is_mod(msg) then
-if not lang then
-text = [[
-
-_Sudoer And Admins Beyond Bot Help :_
-
-*!visudo* `[username|id|reply]`
-_Add Sudo_
-
-*!desudo* `[username|id|reply]`
-_Demote Sudo_
-
-*!sudolist *
-_Sudo(s) list_
-
-*!adminprom* `[username|id|reply]`
-_Add admin for bot_
-
-*!admindem* `[username|id|reply]`
-_Demote bot admin_
-
-*!adminlist *
-_Admin(s) list_
-
-*!leave *
-_Leave current group_
-
-*!autoleave* `[disable/enable]`
-_Automatically leaves group_
-
-*!creategroup* `[text]`
-_Create normal group_
-
-*!createsuper* `[text]`
-_Create supergroup_
-
-*!tosuper *
-_Convert to supergroup_
-
-*!chats*
-_List of added groups_
-
-*!join* `[id]`
-_Adds you to the group_
-
-*!rem* `[id]`
-_Remove a group from Database_
-
-*!import* `[link]`
-_Bot joins via link_
-
-*!setbotname* `[text]`
-_Change bot's name_
-
-*!setbotusername* `[text]`
-_Change bot's username_
-
-*!delbotusername *
-_Delete bot's username_
-
-*!markread* `[off/on]`
-_Second mark_
-
-*!broadcast* `[text]`
-_Send message to all added groups_
-
-*!bc* `[text] [gpid]`
-_Send message to a specific group_
-
-*!sendfile* `[folder] [file]`
-_Send file from folder_
-
-*!sendplug* `[plug]`
-_Send plugin_
-
-*!del* `[Reply]`
-_Remove message Person you are_
-
-*!save* `[plugin name] [reply]`
-_Save plugin by reply_
-
-*!savefile* `[address/filename] [reply]`
-_Save File by reply to specific folder_
-
-*!clear cache*
-_Clear All Cache Of .telegram-cli/data_
-
-*!check*
-_Stated Expiration Date_
-
-*!check* `[GroupID]`
-_Stated Expiration Date Of Specific Group_
-
-*!charge* `[GroupID]` `[Number Of Days]`
-_Set Expire Time For Specific Group_
-
-*!charge* `[Number Of Days]`
-_Set Expire Time For Group_
-
-*!jointo* `[GroupID]`
-_Invite You To Specific Group_
-
-*!leave* `[GroupID]`
-_Leave Bot From Specific Group_
-
-_You can use_ *[!/#]* _at the beginning of commands._
-
-`This help is only for sudoers/bot admins.`
- 
-*This means only the sudoers and its bot admins can use mentioned commands.*
-
-*Good luck ;)*]]
-tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'md')
-else
-
-text = [[
-_راهنمای ادمین و سودو های ربات بیوند:_
-
-*سودو* `[username|id|reply]`
-_اضافه کردن سودو_
-
-*حذف سودو* `[username|id|reply]`
-_حذف کردن سودو_
-
-*لیست سودو* 
-_لیست سودو‌های ربات_
-
-*ادمین* `[username|id|reply]`
-_اضافه کردن ادمین به ربات_
-
-*حذف ادمین* `[username|id|reply]`
-_حذف فرد از ادمینی ربات_
-
-*لیست ادمین* 
-_لیست ادمین ها_
-
-*خروج* 
-_خارج شدن ربات از گروه_
-
-*خروج خودکار* `[غیرفعال/فعال | موقعیت]`
-_خروج خودکار_
-
-*ساخت گروه* `[اسم انتخابی]`
-_ساخت گروه ریلم_
-
-*ساخت سوپر گروه* `[اسم انتخابی]`
-_ساخت سوپر گروه_
-
-*تبدیل به سوپر* 
-_تبدیل به سوپر گروه_
-
-*لیست گروه ها*
-_لیست گروه های مدیریتی ربات_
-
-*افزودن* `[ایدی گروه]`
-_جوین شدن توسط ربات_
-
-*حذف گروه* `[ایدی گروه]`
-_حذف گروه ازطریق پنل مدیریتی_
-
-*ورود لینک* `[لینک_]`
-_جوین شدن ربات توسط لینک_
-
-*تغییر نام ربات* `[text]`
-_تغییر اسم ربات_
-
-*تغییر یوزرنیم ربات* `[text]`
-_تغییر یوزرنیم ربات_
-
-*حذف یوزرنیم ربات* 
-_پاک کردن یوزرنیم ربات_
-
-*تیک دوم* `[فعال/غیرفعال]`
-_تیک دوم_
-
-*ارسال به همه* `[متن]`
-_فرستادن پیام به تمام گروه های مدیریتی ربات_
-
-*ارسال* `[متن]` `[ایدی گروه]`
-_ارسال پیام مورد نظر به گروه خاص_
-
-*ارسال فایل* `[cd]` `[file]`
-_ارسال فایل موردنظر از پوشه خاص_
-
-*ارسال پلاگین* `[اسم پلاگین]`
-_ارسال پلاگ مورد نظر_
-
-* ذخیره پلاگین* `[اسم پلاگین] [reply]`
-_ذخیره کردن پلاگین_
-
-*ذخیره فایل* `[address/filename] [reply]`
-_ذخیره کردن فایل در پوشه مورد نظر_
-
-*پاک کردن حافظه*
-_پاک کردن کش مسیر .telegram-cli/data_
-
-*اعتبار*
-_اعلام تاریخ انقضای گروه_
-
-*اعتبار* `[ایدی گروه]`
-_اعلام تاریخ انقضای گروه مورد نظر_
-
-*شارژ* `[ایدی گروه]` `[تعداد روز]`
-_تنظیم تاریخ انقضای گروه مورد نظر_
-
-*شارژ* `[تعداد روز]`
-_تنظیم تاریخ انقضای گروه_
-
-*ورود به* `[ایدی گروه]`
-_دعوت شدن شما توسط ربات به گروه مورد نظر_
-
-*خروج* `[ایدی گروه]`
-_خارج شدن ربات از گروه مورد نظر_
-
-*شما میتوانید از [!/#] در اول دستورات برای اجرای آنها بهره بگیرید*
-
-_این راهنما فقط برای سودو ها/ادمین های ربات میباشد!_
-
-`این به این معناست که فقط سودو ها/ادمین های ربات میتوانند از دستورات بالا استفاده کنند!`
-
-*موفق باشید ;)*]]
-tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'md')
-end
-
-end
-end
+  end 
+end  
 
 return { 
 patterns = {                                                                   
-command .. "([Hh]elptools)$", 
 command .. "([Vv]isudo)$", 
 command .. "([Dd]esudo)$",
 command .. "([Ss]udolist)$",
@@ -1435,7 +1207,7 @@ command .. "([Aa]dminprom) (.*)$",
 command .. "([Aa]dmindem) (.*)$",
 command .. "([Ll]eave)$",
 command .. "([Aa]utoleave) (.*)$", 
-command .. "([Bb]eyond)$",
+command .. "([Pp]rime)$",
 command .. "([Cc]reategroup) (.*)$",
 command .. "([Cc]reatesuper) (.*)$",
 command .. "([Tt]osuper)$",
@@ -1464,7 +1236,6 @@ command .. "([Jj]ointo) (-%d+)$",
 command .. "([Ll]eave) (-%d+)$",
 command .. "([Pp]lan) ([123]) (-%d+)$",
 command .. "([Rr]em)$",
- "^([Hh]elptools)$", 
  "^([Vv]isudo)$", 
  "^([Dd]esudo)$",
  "^([Ss]udolist)$",
@@ -1477,7 +1248,7 @@ command .. "([Rr]em)$",
  "^([Aa]dmindem) (.*)$",
  "^([Ll]eave)$",
  "^([Aa]utoleave) (.*)$", 
- "^([Bb]eyond)$",
+ "^([Pp]rime)$",
  "^([Cc]reategroup) (.*)$",
  "^([Cc]reatesuper) (.*)$",
  "^([Tt]osuper)$",
@@ -1511,7 +1282,6 @@ patterns_fa = {
 	"^(افزودن)$",
 	"^(حذف گروه)$",
     "^(حذف گروه) (-%d+)$",	
-    "^(راهنما ابزار)$",
 	"^(لیست سودو)$",
 	"^(اطلاعات)$",
 	"^(ساخت گروه) (.*)$",
@@ -1548,8 +1318,8 @@ patterns_fa = {
     "^(ارسال) +(.*) (-%d+)$",
 	"^(افزودن) (-%d+)$",
 	"^(پاک کردن حافظه)$",
-	"^(بیوند)$",
+	"^(پرایم)$",
 },
 run = run, pre_process = pre_process
 }
--- #End By @BeyondTeam
+-- #End By @PrimeTeam :):|
