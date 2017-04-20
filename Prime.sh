@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $HOME/BDReborn
+cd $HOME/AntiSpam
 
 install() {
 	    cd libs
@@ -22,20 +22,20 @@ install() {
 }
 
 function print_logo() {
-	green "          ____  ____     _____"
-	green "         |  _ )|  _ \   |_   _|___ ____   __  __"
-	green "         |  _ \| |_) )    | |/ .__|  _ \_|  \/  |"
-	green "         |____/|____/     |_|\____/\_____|_/\/\_|"
+        green "          ____   __           _____"                                  
+        green "         | __  )|--|---      |_   _|___ ____   __  __"
+        green "         | _|   |--|           | |/ .__|  _ \_|  \/  |"
+        green "         | _|   |--|           |_|\____/\_____|_/\/\_|"
 	echo -e "\n\e[0m"
 }
 
 function logo_play() {
     declare -A txtlogo
     seconds="0.010"
-    txtlogo[1]=" ____  ____     _____"
-    txtlogo[2]="|  _ )|  _ \   |_   _|___ ____   __  __"
-    txtlogo[3]="|  _ \| |_) )    | |/ .__|  _ \_|  \/  |"
-    txtlogo[4]="|____/|____/     |_|\____/\_____|_/\/\_|"
+    txtlogo[1]=" ____   __        _____"
+    txtlogo[2]="|  __ )|--|---   |_   _|___ ____   __  __"
+    txtlogo[3]="| _|   |--|        | |/ .__|  _ \_|  \/  |"
+    txtlogo[4]="| _|   |--|        |_|\____/\_____|_/\/\_|"
     printf "\e[31m\t"
     for i in ${!txtlogo[@]}; do
         for x in `seq 0 ${#txtlogo[$i]}`; do
@@ -48,14 +48,14 @@ function logo_play() {
 	echo -e "\e[0m"
 }
 
-function beyondteam() {
+function Primeteam() {
 	echo -e "\e[0m"
-	green "     >>>>                       We Are Not Attacker                             "
-	green "     >>>>                       We Are Not Alliance                             "
+	green "     >>>>                       We Are (Anonymous)                             "
+	green "     >>>>                       We Are Clever                             "
 	white "     >>>>                       We Are Programmer                               "
 	white "     >>>>                       We Are The Best                                 "
 	red   "     >>>>                       We Are Family                                   "
-	red   "     >>>>                       @BeyondTeam                                     "
+	red   "     >>>>                       @PrimeTeam                                     "
 	echo -e "\e[0m"
 }
 
@@ -74,12 +74,12 @@ update() {
 
 if [ "$1" = "install" ]; then
 	print_logo
-	beyondteam
+	Primeteam
 	logo_play
 	install
 elif [ "$1" = "update" ]; then
 	logo_play
-	beyondteam
+	Primeteam
 	update
 else
 if [ ! -f ./libs/tgcli ]; then
@@ -88,7 +88,7 @@ if [ ! -f ./libs/tgcli ]; then
     exit 1
 fi
 	print_logo
-	beyondteam
+	Primeteam
 	logo_play
 	#sudo service redis-server restart
 	./libs/tgcli -s ./bot/bot.lua $@
