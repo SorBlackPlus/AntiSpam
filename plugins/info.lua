@@ -1,5 +1,5 @@
---Begin info.lua By @SoLiD
-local Solid = 157059515
+--Begin info.lua By @SorBlack
+local SorBlack = 93365812
 local function setrank(msg, user_id, value,chat_id)
   local hash = nil
 
@@ -239,4 +239,4 @@ patterns_fa = {
 },
 	run = run
 }
---This Is info.lua for BDReborn Source :)
+--This Is info.lua for AntiSpam & Anti-spam Source :|
